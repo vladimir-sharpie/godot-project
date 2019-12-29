@@ -7,8 +7,6 @@ const FLOOR = Vector2(0, -1)
 
 var velocity = Vector2()
 
-var on_ground = false
-
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	
@@ -21,12 +19,12 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed('up') and is_on_floor():	
         	velocity.y = JUMP_POWER
+	
+	if Input.is_action_just_pressed('down'):
+		velocity.y = -JUMP_POWER
+	
 		
 	velocity.y += GRAVITY
 	
-	if is_on_floor():
-		on_ground = true
-	else:
-		on_ground = false
-	
 	velocity = move_and_slide(velocity, FLOOR)
+	
