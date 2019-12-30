@@ -9,22 +9,21 @@ var velocity = Vector2()
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
-	
-	if Input.is_action_pressed('right'):
+
+	if Input.is_action_pressed('right2'):
         velocity.x = SPEED
-	elif Input.is_action_pressed('left'):
+	elif Input.is_action_pressed('left2'):
 		velocity.x = -SPEED
 	else:
 		velocity.x = 0
-		
-	if Input.is_action_just_pressed('up') and is_on_floor():	
+
+	if Input.is_action_just_pressed('up2') and is_on_floor():
         	velocity.y = JUMP_POWER
-	
-	if Input.is_action_just_pressed('down'):
+
+	if Input.is_action_just_pressed('down2'):
 		velocity.y = -JUMP_POWER
-	
-		
+
+
 	velocity.y += GRAVITY
-	
+
 	velocity = move_and_slide(velocity, FLOOR)
-	

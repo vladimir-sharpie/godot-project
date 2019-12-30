@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Player_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player_2.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,4 +14,17 @@ format = 1
 tile_data = PoolIntArray( 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0 )
 
 [node name="Player_1" parent="." instance=ExtResource( 3 )]
+position = Vector2( -712.527, 182.199 )
+scale = Vector2( 3, 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 103.0
+margin_bottom = 14.0
+rect_scale = Vector2( 3, 3 )
+hint_tooltip = "test"
+text = "ESC = Exit Game"
+align = 1
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 293.633, -675.356 )
 scale = Vector2( 3, 3 )
