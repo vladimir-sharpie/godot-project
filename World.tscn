@@ -1,30 +1,34 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Player_1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player_2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player_2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/001_floor.png" type="Texture" id=4]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
-format = 1
-tile_data = PoolIntArray( 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0 )
-
-[node name="Player_1" parent="." instance=ExtResource( 3 )]
-position = Vector2( -712.527, 182.199 )
+[node name="Player_1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -358.926, 36.3239 )
 scale = Vector2( 3, 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_right = 103.0
-margin_bottom = 14.0
 rect_scale = Vector2( 3, 3 )
 hint_tooltip = "test"
 text = "ESC = Exit Game"
 align = 1
+valign = 1
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 293.633, -675.356 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -139.253, -829.641 )
 scale = Vector2( 3, 3 )
+
+[node name="001_floor" type="Sprite" parent="."]
+position = Vector2( 958.665, 657.922 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="001_floor"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="001_floor/StaticBody2D"]
+position = Vector2( 3.1734, 0 )
+polygon = PoolVector2Array( 84.6125, 212.679, 360.113, 212.679, 516.863, 212.679, 480.476, 260.029, 399.556, 339.363, 67.9408, 391.723, -60.58, 396.483, -236.701, 337.776, -304.928, 304.456, -479.462, 301.282, -547.689, 212.679, -58.9933, 212.428, -58.9933, 212.428 )
