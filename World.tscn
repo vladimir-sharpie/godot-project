@@ -9,22 +9,22 @@
 script = ExtResource( 1 )
 
 [node name="Player_1" parent="." instance=ExtResource( 2 )]
-position = Vector2( -358.926, 36.3239 )
-scale = Vector2( 3, 3 )
+position = Vector2( -73.3109, 22.0438 )
 
 [node name="Label" type="Label" parent="."]
-rect_scale = Vector2( 3, 3 )
+margin_right = 103.0
+margin_bottom = 14.0
 hint_tooltip = "test"
 text = "ESC = Exit Game"
 align = 1
 valign = 1
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( -139.253, -829.641 )
-scale = Vector2( 3, 3 )
+position = Vector2( -94.8261, -266.571 )
 
 [node name="001_floor" type="Sprite" parent="."]
-position = Vector2( 958.665, 657.922 )
+position = Vector2( 320, 250 )
+scale = Vector2( 0.248087, 0.248087 )
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="001_floor"]
